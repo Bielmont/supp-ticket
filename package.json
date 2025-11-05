@@ -1,0 +1,12 @@
+{
+  "name": "supp-ticket",
+  "version": "1.0.0",
+  "description": "API de gereciamento de tickets de suporte.",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/server.js"
+  },
+  "author": "guilherme gomes",
+  "license": "ISC"
+}
