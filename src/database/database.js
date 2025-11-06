@@ -21,4 +21,30 @@ export class Database {
         fs.writeFile(DATABASE_PATH, JSON.stringify(this.#database));
     }
 
+    insert(table, data) {
+        if (Array.isArray(this.#database[table])) {
+            this.#database[table].push(data);
+        } else {
+            this.#database[table] = [data];
+        }
+        this.#persist()
+        return data
+    }
+
+    select(table, filters) {
+        let data = this.#database[table] ?? [];
+
+        if (filters) {
+            data = data.filter((ROW) => {
+                returnObject.entries(filters).some(([key, value]) => {
+                    return ROW[key] === value
+                })
+            })
+
+        }
+        return data
+    }
+
+
+
 }
