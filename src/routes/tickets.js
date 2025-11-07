@@ -1,6 +1,6 @@
-import { create } from "../controllers/create.js"
-import { index } from "../controllers/index.js"
-import { update } from "../controllers/update.js"
+import { create } from "../controllers/tickets/create.js"
+import { index } from "../controllers/tickets/index.js"
+import { update } from "../controllers/tickets/update.js"
 
 
 

@@ -5,8 +5,6 @@ export async function jsonHandler(request, response) {
         buffers.push(chunk)
     }
 
-
-
     try {
         request.body = JSON.parse(Buffer.concat(buffers).toString())
     }
@@ -16,4 +14,6 @@ export async function jsonHandler(request, response) {
 
     response.setHeader("Content-Type", "application/json")
 
+
 }
+

@@ -5,7 +5,7 @@ export function create({ request, response, database }) {
     const { equipment, description, user_name } = request.body
 
     const ticket = {
-        Id: randomUUID(),
+        id: randomUUID(),
         equipment,
         description,
         user_name,
@@ -15,7 +15,6 @@ export function create({ request, response, database }) {
     }
 
     database.insert("tickets", ticket)
-
 
     return response.writeHead(201).end(JSON.stringify(ticket))
 }
