@@ -18,5 +18,4 @@ export function create({ request, response, database }) {
 
 
     return response.writeHead(201).end(JSON.stringify(ticket))
-
 }

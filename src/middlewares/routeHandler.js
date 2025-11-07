@@ -3,7 +3,6 @@ import { Database } from "../database/database.js";
 import { extractQueryParams } from "../utils/extractQueryParams.js";
 
 
-
 const database = new Database();
 
 export function routeHandler(request, response) {
@@ -14,8 +13,8 @@ export function routeHandler(request, response) {
     if (route) {
         const routeParams = request.url.match(route.path);
 
-        const { query } = routeParams.groups;
-        request.query = query ? extractQueryParams(query) : {};
+        const { query } = routeParams.groups
+        request.query = query ? extractQueryParams(query) : {}
 
         return route.controller({ request, response, database })
     }
