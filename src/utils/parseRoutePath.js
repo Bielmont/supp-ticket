@@ -3,9 +3,9 @@ export function parseRoutePath(path) {
 
     const params = path.replaceAll(routeParametersRegex, "(?<$1>[a-zA-Z0-9-_]+)")
 
-    const pathRegex = new RegExp(`^${params}(?<query>\\?(.*)) ?$`);
+    // query opcional; se existir fica em groups.query (começa com '?')
+    const pathRegex = new RegExp(`^${params}(?<query>\\?.*)?$`)
 
-
-    return pathRegex;
-
+    return pathRegex
 }
+// ..

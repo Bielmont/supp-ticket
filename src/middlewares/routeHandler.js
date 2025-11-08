@@ -16,6 +16,7 @@ export function routeHandler(request, response) {
 
         const { query, ...params } = routeParams.groups
         request.query = query ? extractQueryParams(query) : {}
+        request.params = params
 
         return route.controller({ request, response, database })
     }
